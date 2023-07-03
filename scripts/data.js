@@ -3,14 +3,18 @@ let main = document.getElementById("main")
 
 let userData = []
 
-fetch(`${URL}users`)
-    .then((res) => {
-        return res.json()
-    })
-    .then((data) => {
-        userData = data
-        RenderDisplay(userData)
-    })
+fetchData()
+function fetchData() {
+    fetch(`${URL}users`)
+        .then((res) => {
+            return res.json()
+        })
+        .then((data) => {
+            userData = data
+            RenderDisplay(userData)
+        })
+
+}
 
 
 
@@ -50,20 +54,31 @@ function Card(el) {
 }
 
 
+function Delete(val) {
+    fetch(`${URL}users/${val}`, {
+        method: "DELETE"
+    })
+        .then(() => {
+            alert("Guest Deleted Successfully")
+            fetchData()
+        })
+
+}
+
 
 
 // ......................Sort Functionality..............................
 
-let sort=document.getElementById("sort-age")
+let sort = document.getElementById("sort-age")
 
-sort.addEventListener("change",(e)=>{
+sort.addEventListener("change", (e) => {
     e.preventDefault()
-    if(sort.value=="asc"){
-        userData=userData.sort((a,b)=>{
+    if (sort.value == "asc") {
+        userData = userData.sort((a, b) => {
             return (a.age - b.age)
         })
-    }else{
-        userData=userData.sort((a,b)=>{
+    } else {
+        userData = userData.sort((a, b) => {
             return (b.age - a.age)
         })
     }
@@ -75,15 +90,15 @@ sort.addEventListener("change",(e)=>{
 
 // .......................Filter ........................
 
-let filter_input=document.getElementById("filter-prof")
+let filter_input = document.getElementById("filter-prof")
 
-function filter(){
+function filter() {
     // if(filter_input.value=""){
     //     RenderDisplay(userData)
     //     return
     // }
-    let temp=userData.filter((el)=>{
-        if(filter_input.value==el.profession || filter_input.value==""){
+    let temp = userData.filter((el) => {
+        if (filter_input.value == el.profession || filter_input.value == "") {
             return true
         }
     })
@@ -94,14 +109,14 @@ function filter(){
 
 // Search.................
 
-let search_input=document.getElementById("search-txt")
+let search_input = document.getElementById("search-txt")
 
-function Search(){
-    let tempSearch=userData.filter((el)=>{
-        if(el.name.toLowerCase().includes(search_input.value.toLowerCase())){
+function Search() {
+    let tempSearch = userData.filter((el) => {
+        if (el.name.toLowerCase().includes(search_input.value.toLowerCase())) {
             return true
         }
-        
+
     })
 
     RenderDisplay(tempSearch)
