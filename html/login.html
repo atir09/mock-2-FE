@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="../styles/login.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <div class="logo-div">
+                    <img src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f39f-fe0f.svg" alt="">
+                </div>
+                <h1>MASAIVERSE EVENT</h1>
+            </div>
+            <div class="navlink">
+                <a href="" onclick="logout()">Logout</a>
+                <a href="data.html" id="data" >Data</a>
+                <a href="reports.html" id="reports">Reports</a>
+            </div>
+        </nav>
+    </header>
+
+    <h1 class="heading">
+        Admin-Login
+    </h1>
+
+    <section>
+        <form action="">
+            <div>
+                <label for="name">Email:</label>
+                <input type="text" id="input-email" placeholder="Enter Your Email">
+            </div>
+            <div>
+                <label for="pass">Password:</label>
+                <input type="text" id="input-pass" placeholder="Enter Your Password">
+            </div>
+
+            <div>
+                <input type="submit">
+
+            </div>
+        </form>
+    </section>
+
+</body>
+<script src="../scripts/login.js"></script>
+</html>

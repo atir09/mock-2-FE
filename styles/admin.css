@@ -1,0 +1,38 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightpink;
+    padding:0px 20px;
+}
+
+nav div{
+    display: flex;
+}
+
+.logo-div{
+    width: 5rem;
+}
+
+.logo-div img{
+    width: 100%;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+
+.navlink{
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* ........................................................... */

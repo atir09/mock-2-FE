@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Data</title>
+    <link rel="stylesheet" href="../styles/data.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div>
+                <div class="logo-div">
+                    <img src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f39f-fe0f.svg" alt="">
+                </div>
+                <h1>MASAIVERSE EVENT</h1>
+            </div>
+            <div class="navlink">
+                <a href="login.html" >Logout</a>
+                <a href="data.html" id="data" >Data</a>
+                <a href="reports.html" id="reports" >Reports</a>
+            </div>
+        </nav>
+    </header>
+
+    <h1 class="heading">
+        Data
+    </h1>
+
+    <section id="func">
+        <div>
+            <label for="sort-age">Sort By age:</label>
+            <select name="age" id="sort-age">
+                <option value="asc">Ascending Order</option>
+                <option value="des">Descending Order</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="filter-prof">Filter By Profession:</label>
+            <select name="prof" id="filter-prof" onchange="filter()">
+                <option value="">Select Profession</option>
+                <option value="FSD">FSD</option>
+                <option value="Backend">Backend</option>
+                <option value="FrontEnd">FrontEnd</option>
+                <option value="Student">Student</option>
+                <option value="DA">DA</option>
+            </select>
+        </div>
+
+        <div style="display: flex;">
+            <label for="search-text">Search by name:</label>
+            <input type="text" id="search-txt" oninput="Search()">
+        </div>
+    </section>
+
+    <section id="main">
+        
+    </section>
+
+</body>
+<script src="../scripts/data.js"></script>
+</html>
